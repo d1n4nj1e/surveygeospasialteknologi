@@ -9,6 +9,8 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { FloatingWhatsApp } from "@/components/site/FloatingWhatsApp";
+
 
 function NotFoundComponent() {
   return (
@@ -86,8 +88,33 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Penyedia layanan sewa alat survey profesional untuk konstruksi dan pertambangan di area Vale, Sorowako.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "id_ID" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "PT Survey Geospasial Teknologi",
+          description:
+            "Penyedia layanan sewa alat survey dan jasa surveyor di Sorowako, Luwu Timur.",
+          areaServed: "Sorowako, Luwu Timur, Sulawesi Selatan",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Jl. Magani",
+            addressLocality: "Sorowako",
+            addressRegion: "Sulawesi Selatan",
+            postalCode: "92983",
+            addressCountry: "ID",
+          },
+          telephone: "+6281244550000",
+          openingHours: "Mo-Sa 08:00-17:00",
+        }),
+      },
+    ],
+
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -106,7 +133,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="id">
       <head>
         <HeadContent />
       </head>
@@ -124,6 +151,8 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <Outlet />
+      <FloatingWhatsApp />
     </QueryClientProvider>
   );
 }
+
