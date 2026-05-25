@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Calendar, ShieldCheck, Truck } from "lucide-react";
+import { ArrowRight, Calendar, ShieldCheck, Truck, HardHat } from "lucide-react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { EquipmentCard } from "@/components/site/EquipmentCard";
