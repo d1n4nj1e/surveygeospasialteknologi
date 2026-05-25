@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Calendar, ShieldCheck, Truck, HardHat } from "lucide-react";
+import { ArrowRight, Calendar, ShieldCheck, Truck, HardHat, MessageCircle, ClipboardCheck, PackageCheck, Wrench } from "lucide-react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { EquipmentCard } from "@/components/site/EquipmentCard";
@@ -207,7 +207,85 @@ function Index() {
         </div>
       </section>
 
+      {/* Cara Sewa */}
+      <section className="bg-white py-24 border-t border-hairline">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-[48ch] mb-16">
+            <span className="text-xs font-semibold uppercase tracking-widest text-brand-green mb-4 block">
+              Proses Sewa
+            </span>
+            <h2 className="text-3xl font-medium text-ink tracking-tight text-balance">
+              Empat langkah, alat siap di lokasi Anda.
+            </h2>
+          </div>
+          <ol className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon: MessageCircle, title: "Hubungi via WhatsApp", body: "Sampaikan jenis alat, durasi, dan lokasi proyek Anda." },
+              { icon: ClipboardCheck, title: "Konfirmasi & booking", body: "Kami cek ketersediaan dan kirim penawaran harga." },
+              { icon: PackageCheck, title: "Pengiriman alat", body: "Antar ke site di Sorowako dan sekitarnya — siap pakai." },
+              { icon: Wrench, title: "Dukungan & pengembalian", body: "Support teknis selama sewa, lalu kami jemput saat selesai." },
+            ].map((s, i) => (
+              <li key={s.title} className="bg-surface p-6 rounded-xl ring-1 ring-hairline relative">
+                <span className="absolute top-4 right-5 text-xs font-mono text-ink-muted">0{i + 1}</span>
+                <div className="size-10 rounded-md bg-brand-blue/10 text-brand-blue grid place-items-center mb-5">
+                  <s.icon className="size-5" strokeWidth={1.75} />
+                </div>
+                <h3 className="text-base font-semibold text-ink mb-2">{s.title}</h3>
+                <p className="text-sm text-ink-muted">{s.body}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-surface py-24 border-t border-hairline">
+        <div className="max-w-4xl mx-auto px-6">
+          <span className="text-xs font-semibold uppercase tracking-widest text-brand-green mb-4 block">
+            FAQ
+          </span>
+          <h2 className="text-3xl font-medium text-ink tracking-tight text-balance mb-12">
+            Pertanyaan yang sering diajukan.
+          </h2>
+          <div className="divide-y divide-hairline ring-1 ring-hairline rounded-xl bg-white">
+            {[
+              {
+                q: "Apakah alat sudah terkalibrasi?",
+                a: "Ya. Setiap unit melewati kalibrasi berkala dan pengecekan sebelum dikirim. Sertifikat kalibrasi dapat diminta saat sewa.",
+              },
+              {
+                q: "Berapa minimum durasi sewa?",
+                a: "Minimum 1 hari, tetapi tersedia paket mingguan dan bulanan dengan harga lebih hemat untuk proyek jangka panjang.",
+              },
+              {
+                q: "Apakah ada layanan antar-jemput?",
+                a: "Ya, gratis untuk area Sorowako dan sekitarnya. Untuk lokasi di luar Luwu Timur dikenakan biaya logistik sesuai jarak.",
+              },
+              {
+                q: "Apakah operator/surveyor disediakan?",
+                a: "Bisa. Kami menyediakan jasa surveyor terpisah — lihat halaman Jasa Surveyor atau hubungi kami untuk paket alat + operator.",
+              },
+              {
+                q: "Bagaimana jika alat rusak saat sewa?",
+                a: "Kerusakan akibat pemakaian wajar ditanggung kami. Kerusakan karena kelalaian akan dibahas sesuai kesepakatan awal.",
+              },
+            ].map((f) => (
+              <details key={f.q} className="group p-6 [&_summary::-webkit-details-marker]:hidden">
+                <summary className="flex items-center justify-between cursor-pointer list-none">
+                  <span className="text-sm font-semibold text-ink pr-6">{f.q}</span>
+                  <span className="size-6 grid place-items-center text-ink-muted group-open:rotate-45 transition-transform">
+                    +
+                  </span>
+                </summary>
+                <p className="text-sm text-ink-muted mt-3 max-w-[64ch]">{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
+
       <section className="bg-ink py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="bg-brand-green/10 ring-1 ring-white/10 rounded-2xl p-8 md:p-16 overflow-hidden relative">
