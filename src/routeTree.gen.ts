@@ -13,6 +13,7 @@ import { Route as TentangKamiRouteImport } from './routes/tentang-kami'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SewaAlatRouteImport } from './routes/sewa-alat'
 import { Route as KontakRouteImport } from './routes/kontak'
+import { Route as JasaSurveyorRouteImport } from './routes/jasa-surveyor'
 import { Route as IndexRouteImport } from './routes/index'
 
 const TentangKamiRoute = TentangKamiRouteImport.update({
@@ -35,6 +36,11 @@ const KontakRoute = KontakRouteImport.update({
   path: '/kontak',
   getParentRoute: () => rootRouteImport,
 } as any)
+const JasaSurveyorRoute = JasaSurveyorRouteImport.update({
+  id: '/jasa-surveyor',
+  path: '/jasa-surveyor',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -43,6 +49,7 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/jasa-surveyor': typeof JasaSurveyorRoute
   '/kontak': typeof KontakRoute
   '/sewa-alat': typeof SewaAlatRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -50,6 +57,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/jasa-surveyor': typeof JasaSurveyorRoute
   '/kontak': typeof KontakRoute
   '/sewa-alat': typeof SewaAlatRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -58,6 +66,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/jasa-surveyor': typeof JasaSurveyorRoute
   '/kontak': typeof KontakRoute
   '/sewa-alat': typeof SewaAlatRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -65,12 +74,25 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/kontak' | '/sewa-alat' | '/sitemap.xml' | '/tentang-kami'
+  fullPaths:
+    | '/'
+    | '/jasa-surveyor'
+    | '/kontak'
+    | '/sewa-alat'
+    | '/sitemap.xml'
+    | '/tentang-kami'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/kontak' | '/sewa-alat' | '/sitemap.xml' | '/tentang-kami'
+  to:
+    | '/'
+    | '/jasa-surveyor'
+    | '/kontak'
+    | '/sewa-alat'
+    | '/sitemap.xml'
+    | '/tentang-kami'
   id:
     | '__root__'
     | '/'
+    | '/jasa-surveyor'
     | '/kontak'
     | '/sewa-alat'
     | '/sitemap.xml'
@@ -79,6 +101,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  JasaSurveyorRoute: typeof JasaSurveyorRoute
   KontakRoute: typeof KontakRoute
   SewaAlatRoute: typeof SewaAlatRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -115,6 +138,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KontakRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/jasa-surveyor': {
+      id: '/jasa-surveyor'
+      path: '/jasa-surveyor'
+      fullPath: '/jasa-surveyor'
+      preLoaderRoute: typeof JasaSurveyorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -127,6 +157,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  JasaSurveyorRoute: JasaSurveyorRoute,
   KontakRoute: KontakRoute,
   SewaAlatRoute: SewaAlatRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,

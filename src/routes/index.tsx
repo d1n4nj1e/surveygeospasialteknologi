@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Calendar, ShieldCheck, Truck } from "lucide-react";
+import { ArrowRight, Calendar, ShieldCheck, Truck, HardHat } from "lucide-react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { EquipmentCard } from "@/components/site/EquipmentCard";
@@ -158,6 +158,51 @@ function Index() {
                 <p className="text-sm text-ink-muted">{f.body}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Surveyor service */}
+      <section className="bg-white py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="text-xs font-semibold uppercase tracking-widest text-brand-green mb-4 block">
+                Jasa Surveyor
+              </span>
+              <h2 className="text-3xl font-medium text-ink tracking-tight text-balance mb-6 max-w-[24ch]">
+                Tidak hanya alat — kami juga sedia tukang ukur.
+              </h2>
+              <p className="text-sm text-ink-muted text-pretty mb-8 max-w-[52ch]">
+                Butuh tim surveyor untuk pengukuran topografi, stake-out
+                konstruksi, atau monitoring tambang? Tim kami siap mobilisasi
+                dengan alat lengkap dan laporan siap pakai.
+              </p>
+              <Link
+                to="/jasa-surveyor"
+                className="text-sm font-medium text-brand-blue inline-flex items-center gap-2 hover:gap-3 transition-all"
+              >
+                Lihat layanan surveyor
+                <ArrowRight className="size-4" />
+              </Link>
+            </div>
+            <div className="bg-surface ring-1 ring-hairline rounded-xl p-8">
+              <ul className="space-y-5">
+                {[
+                  "Pengukuran topografi & kontur",
+                  "Stake-out konstruksi presisi",
+                  "Survey GNSS/RTK & kavling",
+                  "Volume galian/timbunan tambang",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <div className="size-8 rounded-md bg-brand-blue/10 text-brand-blue grid place-items-center shrink-0">
+                      <HardHat className="size-4" strokeWidth={1.75} />
+                    </div>
+                    <span className="text-sm text-ink pt-1.5">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
