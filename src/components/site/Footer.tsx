@@ -25,6 +25,7 @@ export function Footer() {
             </h4>
             <div className="flex flex-wrap gap-x-8 gap-y-2 md:justify-end">
               <Link to="/sewa-alat" className="text-sm text-ink-muted hover:text-brand-blue">Sewa Alat</Link>
+              <Link to="/jasa-surveyor" className="text-sm text-ink-muted hover:text-brand-blue">Jasa Surveyor</Link>
               <Link to="/tentang-kami" className="text-sm text-ink-muted hover:text-brand-blue">Tentang Kami</Link>
               <Link to="/kontak" className="text-sm text-ink-muted hover:text-brand-blue">Kontak</Link>
             </div>
