@@ -81,7 +81,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Sewa Total Station Leica, GNSS RTK, level, dan aksesoris survey di Sorowako, Luwu Timur. Peralatan terkalibrasi dengan dukungan teknis lapangan.",
       },
       { name: "author", content: "PT Survey Geospasial Teknologi" },
-      { property: "og:title", content: "PT Survey Geospasial Teknologi" },
+      { property: "og:title", content: "PT Survey Geospasial Teknologi — Sewa Alat Survey Sorowako" },
       {
         property: "og:description",
         content:
@@ -90,6 +90,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "id_ID" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "PT Survey Geospasial Teknologi — Sewa Alat Survey Sorowako" },
+      { name: "description", content: "Survey Gear Pro is a website for renting survey equipment and hiring professional surveyors." },
+      { property: "og:description", content: "Survey Gear Pro is a website for renting survey equipment and hiring professional surveyors." },
+      { name: "twitter:description", content: "Survey Gear Pro is a website for renting survey equipment and hiring professional surveyors." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/99eadedd-95be-416e-bd89-72e8112876fd/id-preview-a0ea000c--ebc4525a-e0f8-480b-a264-cac6a4151c3a.lovable.app-1779689620207.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/99eadedd-95be-416e-bd89-72e8112876fd/id-preview-a0ea000c--ebc4525a-e0f8-480b-a264-cac6a4151c3a.lovable.app-1779689620207.png" },
     ],
     scripts: [
       {
