@@ -226,9 +226,9 @@ Untuk kontribusi:
 
 Untuk pertanyaan atau dukungan teknis, hubungi tim kami:
 
-- **WhatsApp**: +62 812-4455-0000
-- **Email**: info@surveygeospasial.id
-- **Lokasi**: Jl. Magani, Sorowako, Kec. Nuha, Kabupaten Luwu Timur, Sulawesi Selatan 92983
+- **WhatsApp**: +62 853-4270-6705
+- **Email**: ruswandiyusuff@gmail.com
+- **Lokasi**: Jl. Ebony Raya Blok C1/4, Sorowako, Kec. Nuha, Kabupaten Luwu Timur, Sulawesi Selatan 92983
 
 ---
 
