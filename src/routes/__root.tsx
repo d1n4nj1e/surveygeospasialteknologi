@@ -14,19 +14,19 @@ import { FloatingWhatsApp } from "@/components/site/FloatingWhatsApp";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
+    <div className="flex min-h-screen items-center justify-center bg-surface px-6">
       <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+        <h1 className="text-7xl font-bold text-ink">404</h1>
+        <h2 className="mt-4 text-xl font-semibold text-ink">Halaman tidak ditemukan</h2>
+        <p className="mt-2 text-sm text-ink-muted">
+          Halaman yang Anda cari tidak ada atau telah dipindahkan. Silakan kembali ke beranda.
         </p>
         <div className="mt-6">
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="inline-flex items-center justify-center rounded-md bg-brand-blue text-white px-6 py-2.5 text-sm font-medium transition-opacity hover:opacity-90 active:scale-95"
           >
-            Go home
+            Kembali ke Beranda
           </Link>
         </div>
       </div>
@@ -39,13 +39,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   const router = useRouter();
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
+    <div className="flex min-h-screen items-center justify-center bg-surface px-6">
       <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          This page didn't load
+        <h1 className="text-xl font-semibold tracking-tight text-ink">
+          Terjadi kesalahan
         </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Something went wrong on our end. You can try refreshing or head back home.
+        <p className="mt-2 text-sm text-ink-muted">
+          Terjadi masalah saat memuat halaman. Silakan coba menyegarkan atau kembali ke beranda.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
@@ -53,15 +53,15 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
               router.invalidate();
               reset();
             }}
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="inline-flex items-center justify-center rounded-md bg-brand-blue text-white px-5 py-2.5 text-sm font-medium transition-opacity hover:opacity-90 active:scale-95"
           >
-            Try again
+            Coba Lagi
           </button>
           <a
             href="/"
-            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+            className="inline-flex items-center justify-center rounded-md border border-hairline bg-white text-ink px-5 py-2.5 text-sm font-medium transition-colors hover:bg-surface"
           >
-            Go home
+            Kembali ke Beranda
           </a>
         </div>
       </div>
@@ -74,7 +74,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "PT Survey Geospasial Teknologi — Sewa Alat Survey Sorowako" },
       {
         name: "description",
         content:
@@ -91,11 +90,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:locale", content: "id_ID" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "PT Survey Geospasial Teknologi — Sewa Alat Survey Sorowako" },
-      { name: "description", content: "Survey Gear Pro is a website for renting survey equipment and hiring professional surveyors." },
-      { property: "og:description", content: "Survey Gear Pro is a website for renting survey equipment and hiring professional surveyors." },
-      { name: "twitter:description", content: "Survey Gear Pro is a website for renting survey equipment and hiring professional surveyors." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/99eadedd-95be-416e-bd89-72e8112876fd/id-preview-a0ea000c--ebc4525a-e0f8-480b-a264-cac6a4151c3a.lovable.app-1779689620207.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/99eadedd-95be-416e-bd89-72e8112876fd/id-preview-a0ea000c--ebc4525a-e0f8-480b-a264-cac6a4151c3a.lovable.app-1779689620207.png" },
+      { name: "twitter:description", content: "Penyedia layanan sewa alat survey profesional untuk konstruksi dan pertambangan di area Vale, Sorowako." },
     ],
     scripts: [
       {
